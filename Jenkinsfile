@@ -5,16 +5,20 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                bat "mvn clean install"
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
+                bat "mvn test"
             }
         }
-        stage('Deploy') {
+        stage('Packaging') {
             steps {
-                echo 'Deploying....'
+                echo 'Packaging....'
+                bat "mvn package"
+                
             }
         }
     }
