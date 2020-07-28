@@ -14,12 +14,6 @@ pipeline {
                 bat "mvn test"
             }
         }
-        stage('Packaging') {
-            steps {
-                echo 'Packaging....'
-                bat "mvn package"
-                
-            }
-        }
+                }
     }
 }
